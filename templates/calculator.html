@@ -3,94 +3,96 @@
     Calculator Medii
 {% endblock %}
 {% block main %}
-<div class="textsp">
-    <h1 class="text-center">Calculator Medii</h1>
-</div>
-<div class="center-elements">
-    <div class="container mt-4 calculator-container">
-        <form action="/calculator" method="post">
-            <div class="row">
-                <!-- Prima coloana -->
-                <div class="col-md-6">
-                    <div class="form-group mb-3">
-                        <input type="number" class="form-control" id="romana" name="romana" placeholder="Romana" min="1" max="10">
+<div class="calculator-big">
+    <div class="textsp">
+        <h1 class="text-center">Calculator Medii</h1>
+    </div>
+    <div class="center-elements">
+        <div class="container mt-4 calculator-container">
+            <form action="/calculator" method="post">
+                <div class="row">
+                    <!-- Prima coloana -->
+                    <div class="col-md-6">
+                        <div class="form-group mb-3">
+                            <input type="number" class="form-control" id="romana" name="romana" placeholder="Romana" min="1" max="10">
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="number" class="form-control" id="engleza" name="engleza" placeholder="Engleza" min="1" max="10">
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="number" class="form-control" id="franceza" name="franceza" placeholder="Franceza" min="1" max="10">
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="number" class="form-control" id="mate" name="mate" placeholder="Matematica" min="1" max="10">
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="number" class="form-control" id="fizica" name="fizica" placeholder="Fizica" min="1" max="10">
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="number" class="form-control" id="chimie" name="chimie" placeholder="Chimie" min="1" max="10">
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="number" class="form-control" id="biologie" name="biologie" placeholder="Biologie" min="1" max="10">
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="number" class="form-control" id="istorie" name="istorie" placeholder="Istorie" min="1" max="10">
+                        </div>
                     </div>
-                    <div class="form-group mb-3">
-                        <input type="number" class="form-control" id="engleza" name="engleza" placeholder="Engleza" min="1" max="10">
-                    </div>
-                    <div class="form-group mb-3">
-                        <input type="number" class="form-control" id="franceza" name="franceza" placeholder="Franceza" min="1" max="10">
-                    </div>
-                    <div class="form-group mb-3">
-                        <input type="number" class="form-control" id="mate" name="mate" placeholder="Matematica" min="1" max="10">
-                    </div>
-                    <div class="form-group mb-3">
-                        <input type="number" class="form-control" id="fizica" name="fizica" placeholder="Fizica" min="1" max="10">
-                    </div>
-                    <div class="form-group mb-3">
-                        <input type="number" class="form-control" id="chimie" name="chimie" placeholder="Chimie" min="1" max="10">
-                    </div>
-                    <div class="form-group mb-3">
-                        <input type="number" class="form-control" id="biologie" name="biologie" placeholder="Biologie" min="1" max="10">
-                    </div>
-                    <div class="form-group mb-3">
-                        <input type="number" class="form-control" id="istorie" name="istorie" placeholder="Istorie" min="1" max="10">
+                                
+                    <!-- A doua coloana -->
+                    <div class="col-md-6">
+                        <div class="form-group mb-3">
+                            <input type="number" class="form-control" id="geografie" name="geografie" placeholder="Geografie" min="1" max="10">
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="number" class="form-control" id="psihologie" name="psihologie" placeholder="Psihologie" min="1" max="10">
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="number" class="form-control" id="religie" name="religie" placeholder="Religie" min="1" max="10">
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="number" class="form-control" id="muzica" name="muzica" placeholder="Muzica" min="1" max="10">
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="number" class="form-control" id="desen" name="desen" placeholder="Desen" min="1" max="10">
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="number" class="form-control" id="sport" name="sport" placeholder="Sport" min="1" max="10">
+                        </div> 
+                        <div class="form-group mb-3">
+                            <input type="number" class="form-control" id="info" name="info" placeholder="Informatica" min="1" max="10">
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="number" class="form-control" id="tic" name="tic" placeholder="TIC" min="1" max="10">
+                        </div>
                     </div>
                 </div>
-                            
-                <!-- A doua coloana -->
+                <div class="row">
                 <div class="col-md-6">
-                    <div class="form-group mb-3">
-                        <input type="number" class="form-control" id="geografie" name="geografie" placeholder="Geografie" min="1" max="10">
-                    </div>
-                    <div class="form-group mb-3">
-                        <input type="number" class="form-control" id="psihologie" name="psihologie" placeholder="Psihologie" min="1" max="10">
-                    </div>
-                    <div class="form-group mb-3">
-                        <input type="number" class="form-control" id="religie" name="religie" placeholder="Religie" min="1" max="10">
-                    </div>
-                    <div class="form-group mb-3">
-                        <input type="number" class="form-control" id="muzica" name="muzica" placeholder="Muzica" min="1" max="10">
-                    </div>
-                    <div class="form-group mb-3">
-                        <input type="number" class="form-control" id="desen" name="desen" placeholder="Desen" min="1" max="10">
-                    </div>
-                    <div class="form-group mb-3">
-                        <input type="number" class="form-control" id="sport" name="sport" placeholder="Sport" min="1" max="10">
-                    </div> 
-                    <div class="form-group mb-3">
-                        <input type="number" class="form-control" id="info" name="info" placeholder="Informatica" min="1" max="10">
-                    </div>
-                    <div class="form-group mb-3">
-                        <input type="number" class="form-control" id="tic" name="tic" placeholder="TIC" min="1" max="10">
+                <div class="form-group mb-3">
+                    <input type="number" class="form-control" id="antreprenoriala" name="antreprenoriala" placeholder="Antreprenoriala" min="1" max="10">
+                </div>
+                </div>
+                <div class="col-md-6">
+                <div class="form-group mb-3">
+                    <input type="number" class="form-control" id="purtare" name="purtare" placeholder="Purtare" min="1" max="10">
+                </div>
+                </div>
+                </div>
+                
+                <!-- Butonul de submit -->
+                <div class="row">
+                <div class="col-md-6 d-flex justify-content-center align-items-center">
+                    <button type="submit" class="btn  feedback-button btn-lg">Trimite</button>
+                </div>
+                <div class="col-md-6 d-flex justify-content-center align-items-center">
+                    <div class="result-box text-center">
+                        Media: {{ rezultat }}
                     </div>
                 </div>
             </div>
-            <div class="row">
-              <div class="col-md-6">
-              <div class="form-group mb-3">
-                  <input type="number" class="form-control" id="antreprenoriala" name="antreprenoriala" placeholder="Antreprenoriala" min="1" max="10">
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group mb-3">
-                  <input type="number" class="form-control" id="purtare" name="purtare" placeholder="Purtare" min="1" max="10">
-              </div>
-            </div>
-            </div>
-            
-            <!-- Butonul de submit -->
-            <div class="row">
-              <div class="col-md-6 d-flex justify-content-center align-items-center">
-                  <button type="submit" class="btn  feedback-button btn-lg">Trimite</button>
-              </div>
-              <div class="col-md-6 d-flex justify-content-center align-items-center">
-                  <div class="result-box text-center">
-                      Media: {{ rezultat }}
-                  </div>
-              </div>
-          </div>
-        </form>
+            </form>
+        </div>
     </div>
 </div>
 {% endblock %}

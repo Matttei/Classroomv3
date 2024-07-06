@@ -502,9 +502,13 @@ footer{
     margin-top: 20px; 
     margin-bottom: 20px;
 }
-@media (max-width: 768px){
-    .carousel-caption{
-        display: block;
-        font-size: 1rem;
+
+
+@media (max-width: 767px) {
+    .calculator-container {
+        min-height: calc(100vh - 80px); 
+        overflow-y: auto; 
+        padding-bottom: 100px; 
     }
 }
+/* TODO: navbar pt telefon, alt design la flash si alte modificari, poate un dark mode
