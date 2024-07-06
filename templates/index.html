@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Acasa
+{% endblock %}
+
+{% block main %}
+<div class="big-container mt-5 h-auto mx-auto">
+    <div class="textsp">
+        <h1 class="text text-center">CNU: Clasa a XI-a B</h1>
+    </div>
+    <!-- Carousel -->
+    <div class="container custom-container mt-5 h-auto mx-auto">
+        <div class="d-flex justify-content-center align-items-center">
+            <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="10000">
+                        <img src="{{ url_for('static', filename='assets/crs2.jpeg') }}" class="custom-img w-100" alt="First Slide">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5 class="carousel-caption-heading">Clasa noastra</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <img src="{{ url_for('static', filename='assets/crs1.jpg') }}" class="custom-img w-100" alt="Second Slide">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Premii</h5>
+                            <p>Avem o clasa plina de olipici la aproape toate materiile.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Carousel -->
+    <!-- Despre clasa -->
+    <div class="px-4 pt-5 my-5 about-container text-center">
+        <h1 class="display-4 fw-bold heading-despre">Despre clasa noastra <i class="bi bi-journal-bookmark-fill"></i></h1>
+        <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4 lower-despre">Cu 24 de <code>elevi</code> clasa noastra se poate spune ca este un model de asa da prin premiile obtinute si prin multe alte lucruri.</p>
+        </div>
+    </div> 
+    <!-- Despre clasa -->
+    <!-- Feedback Modal Trigger Button -->
+    {% if session.get('username') == None %}
+    <p class="feedback-message"><strong>If you want to leave a feedback you can <a href="/register">Register</a>/<a href="/login">Login</a> and come back here ;)</strong></p>
+    {% else %}
+    <div class="d-flex justify-content-center mt-3 feedback-message">
+        <button type="button" class="btn  feedback-button" data-bs-toggle="modal" data-bs-target="#feedbackModal">
+            Leave Feedback
+        </button>
+    </div>
+    <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModal" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="feedbackModal">Feedback</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <form id="feedbackForm" action="/submit_feedback" method="post">
+                <div class="mb-3">
+                <input type="text" placeholder="{{ session.get('username') }}" class="form-control" id="feedback-username" name="username" readonly>
+                </div>
+                <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Your Feedback" id="feedback-text" name="feedback" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            </div>
+        </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#carouselExampleDark").swipe({
+            swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
+                if (direction == 'left') {
+                    $(this).carousel('next');
+                } else if (direction == 'right') {
+                    $(this).carousel('prev');
+                }
+            },
+            allowPageScroll: "vertical"
+        });
+    });
+</script>
+{% endblock %}

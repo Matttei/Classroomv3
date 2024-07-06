@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block title %}
+    Todo-List
+{% endblock %}
+{% block main %}
+<div class="background-container">
+    <div class="textsp">
+        <h1 class="text text-center">TODO List</h1>
+    </div>
+    <div class="center-elements">
+        <div class="todo-list">
+            <h3 class="text text-center" style="color: rgb(187, 160, 190)">{{ session.get('username') }}'s Todo-List <i class="bi bi-card-checklist" style="color: white"></i></h3>
+            <hr style="color: #ffffff">
+            <form id="todo-form" class="form" action="/todo" method="post">
+                <div class="form-group">
+                    <input id="todo-input" name="todo" type="text" placeholder="Add your task" class="form-control-lg">
+                    <button class="btn add-button btn-outline-light btnr" type="submit">Add</button>
+                </div>
+            </form>
+            <ul id="tasks" class="list-group">
+                <!-- Loop through tasks and display them -->
+                {% for task in tasks %}
+                <div class="holding">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="task-info">{{ task.info }}</span>
+                        <form class="d-inline d-flex align-items-center" action="/remove_task" method="post">
+                            <input type="hidden" name="info" value="{{ task.id }}">
+                            <button class="btn remove-btn" type="submit">Remove</button>
+                            <button class="btn ongoing-btn" type="button">Ongoing</button>
+                            <span class="status-marker"></span> <!-- Green circle marker -->
+                        </form>
+                    </li>
+                </div>
+                {% endfor %}
+                
+                                             
+            </ul>
+        </div>
+    </div>
+</div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ongoingButtons = document.querySelectorAll('.ongoing-btn');
+            ongoingButtons.forEach(button => {
+                button.addEventListener('click', function(){
+                    const listItem = this.closest('li');
+                    listItem.classList.toggle('ongoing');
+                });
+            });
+        });
+    </script>
+{% endblock %}

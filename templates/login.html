@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block main %}
+<div class="container-fluid">
+    <div class="row justify-content-center align-items-center" style="height: 100vh;">
+        <div class="col-12 col-md-8 col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title text-center mb-4">Login</h1>
+                    <form action="/login" method="post">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary blr w-100">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
