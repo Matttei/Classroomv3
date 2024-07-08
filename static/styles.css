@@ -381,7 +381,6 @@ footer a:hover {
     border-color: rgb(56, 4, 61);
 }
 .background-container{
-    background: url('assets/book2.png') no-repeat bottom;
     background-position: center;
     height: 100%;
     width: 100%;
@@ -511,4 +510,10 @@ footer{
         padding-bottom: 100px; 
     }
 }
-/* TODO: navbar pt telefon, alt design la flash si alte modificari, poate un dark mode
+.alert-box{
+    background:linear-gradient(to bottom,  rgb(83, 13, 133), rgb(255, 255, 255));
+    border:  none;
+    border-radius: 0;
+    color: white;
+}
+
